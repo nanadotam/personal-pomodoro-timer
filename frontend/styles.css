@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f4f4f4;
@@ -23,4 +23,29 @@ button {
     margin: 5px;
     padding: 10px 20px;
     font-size: 16px;
+} */
+
+:root {
+    font-size: 62.5%;
+
+    --color-primary: #1f2241;
+    --color-secondary: #EE7276;
+
+    --color-text: #ffffe6;
+
+    --color-shadow: 393e79;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: var(--color-primary);
+    font-size: 1.6rem;
+}
+
+
