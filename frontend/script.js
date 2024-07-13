@@ -2,8 +2,11 @@
 let workTitle = document.getElementById('Work');
 let breakTitle = document.getElementById('Break');
 
-let workTime = 25;
-let breakTime = 5;
+let initialWorkTime = 25;
+let initialBreakTime = 5;
+
+let workTime = initialWorkTime;
+let breakTime = initialBreakTime;
 
 let seconds = '00';
 let timerInterval;
@@ -21,8 +24,11 @@ window.onload = () => {
 // Timer (start)
 function start() {
     // Get user-defined work and break times
-    workTime = parseInt(document.getElementById('work-time').value);
-    breakTime = parseInt(document.getElementById('break-time').value);
+    initialWorkTime = parseInt(document.getElementById('work-time').value);
+    initialBreakTime = parseInt(document.getElementById('break-time').value);
+
+    workTime = initialWorkTime;
+    breakTime = initialBreakTime;
 
     // Hide the input form
     document.querySelector('.time-settings').style.display = 'none';
@@ -53,8 +59,8 @@ function start() {
 
             if (workMinutes < 0) {
                 if (breakCount % 2 === 0) {
-                    workMinutes = breakMinutes;
                     breakCount++;
+                    workMinutes = breakMinutes;
 
                     // After 4 rounds, increase the break time to 15 minutes
                     if (breakCount === 8) {
@@ -65,16 +71,14 @@ function start() {
                     // Change the panel
                     workTitle.classList.remove('active');
                     breakTitle.classList.add('active');
-                    document.body.style.backgroundColor = 'var(--color-break)';
                     document.getElementById('beep').play();
                 } else {
-                    workMinutes = workTime;
                     breakCount++;
+                    workMinutes = initialWorkTime - 1;
 
                     // Change the panel
                     breakTitle.classList.remove('active');
                     workTitle.classList.add('active');
-                    document.body.style.backgroundColor = 'var(--color-primary)';
                     document.getElementById('beep').play();
                 }
             }
@@ -95,7 +99,7 @@ function resetTimer() {
     clearInterval(timerInterval);
     isPaused = false;
     breakCount = 0; // Reset break count
-    breakTime = 5; // Reset break time to default
+    breakTime = initialBreakTime; // Reset break time to initial value
 
     // Show the input form
     document.querySelector('.time-settings').style.display = 'flex'; // Use flex to retain layout
@@ -103,11 +107,10 @@ function resetTimer() {
     document.getElementById('start').style.display = 'block';
     document.getElementById('pause').style.display = 'none';
     document.getElementById('reset').style.display = 'none';
-    document.getElementById('minutes').innerHTML = workTime < 10 ? '0' + workTime : workTime;
+    document.getElementById('minutes').innerHTML = initialWorkTime < 10 ? '0' + initialWorkTime : initialWorkTime;
     document.getElementById('seconds').innerHTML = '00';
 
     // Reset the panel
     workTitle.classList.add('active');
     breakTitle.classList.remove('active');
-    document.body.style.backgroundColor = 'var(--color-primary)';
 }
