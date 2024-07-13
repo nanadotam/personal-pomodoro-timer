@@ -24,6 +24,9 @@ function start() {
     workTime = parseInt(document.getElementById('work-time').value);
     breakTime = parseInt(document.getElementById('break-time').value);
 
+    // Hide the input form
+    document.querySelector('.time-settings').style.display = 'none';
+
     // Change button
     document.getElementById('start').style.display = 'none';
     document.getElementById('pause').style.display = 'block';
@@ -93,6 +96,10 @@ function resetTimer() {
     isPaused = false;
     breakCount = 0; // Reset break count
     breakTime = 5; // Reset break time to default
+
+    // Show the input form
+    document.querySelector('.time-settings').style.display = 'block';
+
     document.getElementById('start').style.display = 'block';
     document.getElementById('pause').style.display = 'none';
     document.getElementById('reset').style.display = 'none';
