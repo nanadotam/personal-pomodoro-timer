@@ -65,7 +65,7 @@ function start() {
                     // Change the panel
                     workTitle.classList.remove('active');
                     breakTitle.classList.add('active');
-                    document.body.style.backgroundColor = 'var(--color-secondary)';
+                    document.body.style.backgroundColor = 'var(--color-break)';
                     document.getElementById('beep').play();
                 } else {
                     workMinutes = workTime;

@@ -3,6 +3,7 @@
 
     --color-primary: #1f2241;
     --color-secondary: #EE7276;
+    --color-break: #B0E0E6; /* New break time color */
 
     --color-text: #ffffe6;
 
@@ -144,7 +145,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom: 1.5rem;
     width: 100%; /* Ensure the form is full width */
     text-align: center; /* Center align text and inputs */
