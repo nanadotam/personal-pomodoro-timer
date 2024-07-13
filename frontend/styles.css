@@ -105,6 +105,31 @@ section {
     background-color: var(--color-primary);
 }
 
+/* .circle::after {
+}
+ */
 
-.circle::after {
+.time p{
+    font-size: 5.6rem;
+    display: flex;
+}
+
+.time p:nth-of-type(2) {
+    position: relative;
+    top: -5rem;
+    margin-inline: 1rem;
+}
+
+.controls {
+    margin-top: 3rem;
+}
+
+.controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.controls #reset {
+    display: none;
 }
