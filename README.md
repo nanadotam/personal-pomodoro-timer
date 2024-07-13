@@ -1,6 +1,6 @@
 # Personal-Pomodoro-Timer
 
-A simple Pomodoro timer built with Python (Flask) for the backend and HTML/CSS/JavaScript for the frontend.
+A simple Pomodoro timer built with HTML/CSS/JavaScript and deployed with Netlify.
 
 ## View it live
 You can view the live demo of the Pomodoro timer [here](https://nano-pomodoro.netlify.app/).
