@@ -30,34 +30,43 @@
             <div class="timer">
                 <div class="circle">
                     <div class="time">
-                        <p id="minutes"></p>
+                        <p id="minutes">25</p>
                         <p>:</p>
-                        <p id="seconds"></p>
+                        <p id="seconds">00</p>
                     </div>
                 </div>
             </div>
 
             <div class="controls">
-                <!-- play button -->
+                <!-- Input fields for setting work and break times -->
+                <div class="time-settings">
+                    <label for="work-time">Work Time (minutes):</label>
+                    <input type="number" id="work-time" value="25" min="1">
+                    <label for="break-time">Break Time (minutes):</label>
+                    <input type="number" id="break-time" value="5" min="1">
+                </div>
+
+                <!-- Play button -->
                 <button id="start" onclick="start()">
                     <i class="fa-solid fa-play"></i>
                 </button>
 
                 <!-- Pause button -->
                 <button id="pause" onclick="pauseTimer()" style="display: none;">
-                <i class="fa-solid fa-pause"></i>
+                    <i class="fa-solid fa-pause"></i>
                 </button>
 
-
-                <!-- Reset -->
-                <a id="reset" href="/">
+                <!-- Reset button -->
+                <button id="reset" onclick="resetTimer()" style="display: none;">
                     <i class="fa-solid fa-arrow-rotate-left"></i>
-                </a>
+                </button>
             </div>
         </div>
     </section>
 
     <!-- JS -->
     <script src="script.js"></script>
+    <!-- Add an audio file for notifications -->
+    <audio id="beep" src="https://www.soundjay.com/misc/sounds/bell-ringing-01c.mp3" preload="auto"></audio>
 </body>
 </html>

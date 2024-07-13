@@ -105,9 +105,6 @@ section {
     background-color: var(--color-primary);
 }
 
-/* .circle::after {
-}
- */
 .time {
     position: relative;
     display: flex;
@@ -127,6 +124,10 @@ section {
 
 .controls {
     margin-top: 3rem;
+    display: flex;
+    flex-direction: column; /* Change to column to accommodate input fields */
+    align-items: center; /* Center align the items */
+    gap: 2rem; /* Add space between buttons and inputs */
 }
 
 .controls button {
@@ -137,4 +138,11 @@ section {
 
 .controls #reset {
     display: none;
+}
+
+.time-settings {
+    display: flex;
+    flex-direction: column; /* Stack the labels and inputs vertically */
+    align-items: center; /* Center align the inputs and labels */
+    gap: 0.5rem; /* Add space between labels and inputs */
 }
