@@ -38,3 +38,9 @@ To run this project locally, follow these steps:
 - CSS
 - JavaScript
 - Netlify
+
+## Future Updates
+- Visual circular progress bar
+- Spotify integration: view your current playing song and playlists
+- Pomodoro tracker and (contribution) graph: see statistics for how long you've been locked in
+- Theme changer
