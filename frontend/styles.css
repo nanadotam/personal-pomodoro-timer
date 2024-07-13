@@ -125,9 +125,9 @@ section {
 .controls {
     margin-top: 3rem;
     display: flex;
-    flex-direction: column; /* Change to column to accommodate input fields */
-    align-items: center; /* Center align the items */
-    gap: 2rem; /* Add space between buttons and inputs */
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .controls button {
@@ -144,8 +144,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 1.5rem;
+    width: 100%; /* Ensure the form is full width */
+    text-align: center; /* Center align text and inputs */
 }
 
 .time-settings label {

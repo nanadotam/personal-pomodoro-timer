@@ -98,7 +98,7 @@ function resetTimer() {
     breakTime = 5; // Reset break time to default
 
     // Show the input form
-    document.querySelector('.time-settings').style.display = 'block';
+    document.querySelector('.time-settings').style.display = 'flex'; // Use flex to retain layout
 
     document.getElementById('start').style.display = 'block';
     document.getElementById('pause').style.display = 'none';
