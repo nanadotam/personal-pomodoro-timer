@@ -18,13 +18,52 @@
 </head>
 
 <body>
+    <!-- Move the modal to be a direct child of body -->
+    <div class="stats-modal" id="stats-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Your Progress</h2>
+                <button class="close-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Today's Sessions</h3>
+                        <p class="stat-number" id="today-sessions">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Focus Time</h3>
+                        <p class="stat-number" id="total-focus-time">0h 0m</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Completion Rate</h3>
+                        <p class="stat-number" id="completion-rate">0%</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Current Streak</h3>
+                        <p class="stat-number" id="current-streak">0 days</p>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="weekly-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section>
         <div class="container">
-            <h1>Pomodoro Timer</h1>
+            <h1>Nano Pomodoro Timer</h1>
             <div class="panel">
-                <p id='Work'>Work</p>
-                <p id='Break'>Break</p>
+                <div class="session-indicator">
+                    <p id="Work" class="active">Work</p>
+                    <p id="Break">Break</p>
+                </div>
+                <div class="session-progress">
+                    <span id="tomato-container"></span>
+                </div>
             </div>
 
             <div class="timer">
@@ -46,28 +85,48 @@
                     <input type="number" id="break-time" value="5" min="1">
                 </div>
 
-                <!-- Play button -->
-                <button id="start" onclick="start()">
-                    <i class="fa-solid fa-play"></i>
-                </button>
+                <!-- Separate div for control buttons -->
+                <div class="control-buttons">
+                    <!-- Play button -->
+                    <button id="start" class="control-btn" aria-label="Start Timer">
+                        <i class="fas fa-play"></i>
+                    </button>
 
-                <!-- Pause button -->
-                <button id="pause" onclick="pauseTimer()" style="display: none;">
-                    <i class="fa-solid fa-pause"></i>
-                </button>
+                    <!-- Pause button -->
+                    <button id="pause" class="control-btn" aria-label="Pause Timer" style="display: none;">
+                        <i class="fas fa-pause"></i>
+                    </button>
 
-                <!-- Reset button -->
-                <button id="reset" onclick="resetTimer()" style="display: none;">
-                    <i class="fa-solid fa-arrow-rotate-left"></i>
-                </button>
-
+                    <!-- Reset button -->
+                    <button id="reset" class="control-btn" aria-label="Reset Timer" style="display: none;">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                </div>
             </div>
+
         </div>
     </section>
 
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="statsHandler.js"></script>
     <script src="script.js"></script>
     <!-- Add an audio file for notifications -->
-    <audio id="beep" src="https://www.soundjay.com/misc/sounds/bell-ringing-01c.mp3" preload="auto"></audio>
+    <audio id="beep" preload="auto">
+        <source src="assets/chime.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="session-transition">
+        <div class="tomato">
+            <div class="tomato-body">
+                <div class="leaf"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this right after the section tag, before the container -->
+    <button id="stats-btn" class="stats-btn" aria-label="Show Statistics">
+        <i class="fas fa-chart-line"></i>
+    </button>
 </body>
 </html>
